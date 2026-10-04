@@ -1,0 +1,115 @@
+.connect-hero {
+  padding: 28px 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.connect-hero h2 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+
+.connect-hero p {
+  color: #8e8e8e;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.intention-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.intention-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 16px 8px;
+  border: 1px solid #dbdbdb;
+  border-radius: 12px;
+  background: #fff;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.intention-btn .emoji {
+  font-size: 24px;
+}
+
+.intention-btn.selected {
+  border-color: #0095f6;
+  background: #e7f3ff;
+  color: #0095f6;
+  font-weight: 600;
+}
+
+.open-toggle {
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.open-toggle label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.find-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.empty-state {
+  padding: 32px 20px;
+  text-align: center;
+}
+
+.fallback-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.user-card {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info .avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #bc1888);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.intention {
+  font-size: 13px;
+  color: #0095f6;
+  text-transform: capitalize;
+}

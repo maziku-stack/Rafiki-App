@@ -1,0 +1,104 @@
+.app-layout {
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+.top-nav {
+  background: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 935px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 15px;
+  color: #8e8e8e;
+}
+
+.nav-links a.active {
+  color: #262626;
+  font-weight: 600;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.username {
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+.main-content {
+  max-width: 640px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #dbdbdb;
+  padding: 8px 0;
+  z-index: 100;
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  font-size: 20px;
+  color: #8e8e8e;
+}
+
+.bottom-nav a.active {
+  color: #262626;
+}
+
+.bottom-nav small {
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-right .username {
+    display: none;
+  }
+  .bottom-nav {
+    display: flex;
+  }
+  .main-content {
+    margin-top: 12px;
+  }
+}

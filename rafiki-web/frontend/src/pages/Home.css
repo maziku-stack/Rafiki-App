@@ -1,0 +1,90 @@
+.welcome-banner {
+  padding: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.welcome-banner h2 {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+.welcome-banner p {
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+.empty-state {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.empty-state h3 {
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  color: #8e8e8e;
+  margin-bottom: 20px;
+}
+
+.fallback-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-card {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+}
+
+.user-info .avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f09433, #bc1888);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.user-info .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intention {
+  font-size: 13px;
+  color: #0095f6;
+  text-transform: capitalize;
+  margin-top: 2px;
+}
+
+.bio {
+  font-size: 13px;
+  color: #8e8e8e;
+  margin-top: 2px;
+}
