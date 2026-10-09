@@ -66,7 +66,7 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dhahabu',
+        'NAME': 'rafiki',
         'USER':'postgres',
         'PASSWORD':'i_got_it@you',
         'HOST':'localhost',
@@ -76,7 +76,7 @@ DATABASES = {
 CACHES ={
     'default':{
         'BACKEND':'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION':'dhahabu-local',
+        'LOCATION':'rafiki-local',
     }
 }
 
