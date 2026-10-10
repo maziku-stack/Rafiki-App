@@ -137,17 +137,23 @@ class _ConnectScreenState extends State<ConnectScreen> {
                     )
                   : Column(
                       children: users.map((u) {
+                        final firstName = (u['first_name'] ?? '').toString().trim();
+                        final username = (u['username'] ?? '').toString().trim();
+                        final displayName = firstName.isNotEmpty
+                            ? firstName
+                            : username.isNotEmpty
+                                ? username
+                                : 'Someone';
                         return Card(
                           child: ListTile(
                             leading: CircleAvatar(
                               backgroundColor: const Color(0xFFEDE9FF),
                               child: Text(
-                                  (u['first_name'] ?? u['username'] ?? '?')[0]
-                                      .toUpperCase(),
+                                  displayName[0].toUpperCase(),
                                   style: const TextStyle(
                                       color: Color(0xFF5B49C8))),
                             ),
-                            title: Text(u['first_name'] ?? u['username'] ?? ''),
+                            title: Text(displayName),
                             trailing: ElevatedButton(
                               onPressed: () => _startChat(u['id']),
                               style: ElevatedButton.styleFrom(
