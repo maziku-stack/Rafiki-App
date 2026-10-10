@@ -19,14 +19,44 @@ class RafikiApp extends StatelessWidget {
         title: 'Rafiki',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
-          primaryColor: const Color(0xFF0095F6),
-          scaffoldBackgroundColor: const Color(0xFFFAFAFA),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: const Color(0xFF8C7BFF),
+            primary: const Color(0xFF8C7BFF),
+            secondary: const Color(0xFFFF4F6D),
+            surface: Colors.white,
+          ),
+          scaffoldBackgroundColor: const Color(0xFFF7F5FA),
           fontFamily: 'Roboto',
+          useMaterial3: true,
           appBarTheme: const AppBarTheme(
             backgroundColor: Colors.white,
-            foregroundColor: Colors.black,
-            elevation: 0.5,
+            foregroundColor: Color(0xFF17151C),
+            elevation: 0,
+            centerTitle: false,
+          ),
+          inputDecorationTheme: InputDecorationTheme(
+            filled: true,
+            fillColor: const Color(0xFFF7F5FA),
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: BorderSide.none,
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: const BorderSide(color: Color(0xFFEEEBF2)),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(16),
+              borderSide: const BorderSide(color: Color(0xFF8C7BFF), width: 1.5),
+            ),
+          ),
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color(0xFF17151C),
+              foregroundColor: Colors.white,
+              minimumSize: const Size(48, 54),
+              shape: const StadiumBorder(),
+            ),
           ),
         ),
         home: Consumer<AuthService>(

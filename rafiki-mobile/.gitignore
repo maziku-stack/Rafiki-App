@@ -86,3 +86,7 @@ Thumbs.db
 # ======================
 .coverage
 coverage/
+
+# Flutter application source (the generic Python lib/ rule above must not hide it).
+!frontend/lib/
+!frontend/lib/**
