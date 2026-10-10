@@ -23,7 +23,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
     'deep_talk': ('Want deep talk', ''),
     'share_ideas': ('Share ideas', ''),
     'casual_chat': ('Casual chat', ''),
-    'need_support': ('Need support', ''),
+    'need_support': ('Need support', ' '),
   };
 
   Future<void> _find() async {
@@ -137,8 +137,10 @@ class _ConnectScreenState extends State<ConnectScreen> {
                     )
                   : Column(
                       children: users.map((u) {
-                        final firstName = (u['first_name'] ?? '').toString().trim();
-                        final username = (u['username'] ?? '').toString().trim();
+                        final firstName =
+                            (u['first_name'] ?? '').toString().trim();
+                        final username =
+                            (u['username'] ?? '').toString().trim();
                         final displayName = firstName.isNotEmpty
                             ? firstName
                             : username.isNotEmpty
@@ -148,8 +150,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
                           child: ListTile(
                             leading: CircleAvatar(
                               backgroundColor: const Color(0xFFEDE9FF),
-                              child: Text(
-                                  displayName[0].toUpperCase(),
+                              child: Text(displayName[0].toUpperCase(),
                                   style: const TextStyle(
                                       color: Color(0xFF5B49C8))),
                             ),
