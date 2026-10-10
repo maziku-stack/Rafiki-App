@@ -51,6 +51,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     final user = context.watch<AuthService>().user;
+    final firstName = (user?['first_name'] ?? '').toString().trim();
+    final username = (user?['username'] ?? '').toString().trim();
+    final displayName = firstName.isNotEmpty
+        ? firstName
+        : username.isNotEmpty
+            ? username
+            : 'U';
     return Scaffold(
       appBar: AppBar(title: const Text('Profile')),
       body: ListView(
@@ -61,8 +68,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               radius: 45,
               backgroundColor: const Color(0xFFEDE9FF),
               child: Text(
-                (user?['first_name'] ?? user?['username'] ?? '?')[0]
-                    .toUpperCase(),
+                displayName[0].toUpperCase(),
                 style: const TextStyle(fontSize: 36, color: Color(0xFF5B49C8)),
               ),
             ),

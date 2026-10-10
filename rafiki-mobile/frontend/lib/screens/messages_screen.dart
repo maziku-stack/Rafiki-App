@@ -61,17 +61,22 @@ class _MessagesScreenState extends State<MessagesScreen> {
                   itemBuilder: (context, i) {
                     final c = conversations[i];
                     final other = c['other_user'] ?? {};
+                    final firstName = (other['first_name'] ?? '').toString().trim();
+                    final username = (other['username'] ?? '').toString().trim();
+                    final displayName = firstName.isNotEmpty
+                        ? firstName
+                        : username.isNotEmpty
+                            ? username
+                            : 'User';
                     final last = c['last_message'];
                     return ListTile(
                       leading: CircleAvatar(
                         backgroundColor: const Color(0xFFEDE9FF),
                         child: Text(
-                            (other['first_name'] ?? other['username'] ?? '?')[0]
-                                .toUpperCase(),
+                            displayName[0].toUpperCase(),
                             style: const TextStyle(color: Color(0xFF5B49C8))),
                       ),
-                      title: Text(
-                          other['first_name'] ?? other['username'] ?? 'User'),
+                      title: Text(displayName),
                       subtitle: Text(last != null
                           ? (last['content'] ?? '')
                           : 'Start chatting...'),

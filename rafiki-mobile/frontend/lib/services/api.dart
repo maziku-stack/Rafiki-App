@@ -8,7 +8,9 @@ class Api {
       ? const String.fromEnvironment('API_BASE_URL')
       : defaultTargetPlatform == TargetPlatform.iOS
           ? 'http://127.0.0.1:8000/api'
-          : 'http://10.0.2.2:8000/api';
+          : defaultTargetPlatform == TargetPlatform.android
+              ? 'http://192.168.1.182:8000/api'
+              : 'http://10.0.2.2:8000/api';
 
   static Future<Map<String, String>> _headers() async {
     final prefs = await SharedPreferences.getInstance();
