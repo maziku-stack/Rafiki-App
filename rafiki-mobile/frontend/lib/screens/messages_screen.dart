@@ -37,7 +37,25 @@ class _MessagesScreenState extends State<MessagesScreen> {
       body: loading
           ? const Center(child: CircularProgressIndicator())
           : conversations.isEmpty
-              ? Center(child: Padding(padding: const EdgeInsets.all(24), child: Column(mainAxisSize: MainAxisSize.min, children: const [Icon(Icons.forum_outlined, size: 42, color: Color(0xFF8C7BFF)), SizedBox(height: 12), Text('Your conversations start here', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700, color: Color(0xFF17151C))), SizedBox(height: 8), Text('Visit Connect to meet someone who is open to talking.', textAlign: TextAlign.center, style: TextStyle(color: Color(0xFF7C7885), height: 1.5))])))
+              ? const Center(
+                  child: Padding(
+                      padding: EdgeInsets.all(24),
+                      child: Column(mainAxisSize: MainAxisSize.min, children: [
+                        Icon(Icons.forum_outlined,
+                            size: 42, color: Color(0xFF8C7BFF)),
+                        SizedBox(height: 12),
+                        Text('Your conversations start here',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF17151C))),
+                        SizedBox(height: 8),
+                        Text(
+                            'Visit Connect to meet someone who is open to talking.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                color: Color(0xFF7C7885), height: 1.5))
+                      ])))
               : ListView.builder(
                   itemCount: conversations.length,
                   itemBuilder: (context, i) {
@@ -47,13 +65,21 @@ class _MessagesScreenState extends State<MessagesScreen> {
                     return ListTile(
                       leading: CircleAvatar(
                         backgroundColor: const Color(0xFFEDE9FF),
-                        child: Text((other['first_name'] ?? other['username'] ?? '?')[0].toUpperCase(), style: const TextStyle(color: Color(0xFF5B49C8))),
+                        child: Text(
+                            (other['first_name'] ?? other['username'] ?? '?')[0]
+                                .toUpperCase(),
+                            style: const TextStyle(color: Color(0xFF5B49C8))),
                       ),
-                      title: Text(other['first_name'] ?? other['username'] ?? 'User'),
-                      subtitle: Text(last != null ? (last['content'] ?? '') : 'Start chatting...'),
-                      onTap: () => Navigator.push(context, MaterialPageRoute(
-                        builder: (_) => ChatScreen(conversationId: c['id']),
-                      )),
+                      title: Text(
+                          other['first_name'] ?? other['username'] ?? 'User'),
+                      subtitle: Text(last != null
+                          ? (last['content'] ?? '')
+                          : 'Start chatting...'),
+                      onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ChatScreen(conversationId: c['id']),
+                          )),
                     );
                   },
                 ),
